@@ -1,0 +1,101 @@
+
+/* reset */
+*{
+  color: hsl(0, 1%, 0%);
+  margin: 0;
+  padding: 0;
+  border-top: 0.5px solid hsla(1, 1%, 0%, 0.25);
+  border-bottom: 0.5px solid hsla(1, 1%, 0%, 0.25);  
+}
+
+/* FONTS ----------------------- */
+@font-face {
+  font-family: 'Black Ops One';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Black Ops One Regular'), local('BlackOpsOne-Regular'), url(https://fonts.gstatic.com/s/blackopsone/v9/2XW-DmDsGbDLE372KrMW1TxObtw73-qQgbr7Be51v5c.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+*{
+  font-family: "Helvetica", sans-serif;
+}
+
+h1,
+h2,
+h3{
+  font-family: "Black Ops One";
+  font-variant: small-caps;
+}
+
+ul li{
+  display: inline;
+  list-style: none;
+}
+/* major containers --------------- */
+.container{
+  width: 90%;
+  margin: 0 auto;
+}
+
+header{
+  width: 90%;
+}
+main{
+  width: 90%;
+}
+
+
+
+footer{
+  width: 90%;
+  height: 100px;
+  margin: 0 1fr 0 1fr;
+  padding: 0 1fr 0 1fr;
+}
+/* home, banner, you name it! */
+.container > img{
+  width: 90%;
+}
+
+
+/* footer ---------------- */
+.footerleft{
+  float: left;
+}
+.footerright{
+  float: right;
+}
+footer img{
+  height: 30px;
+}
+footer object{
+  height: 30px;
+}
+
+/* social plugins */
+.socialplugins{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  display: block;
+}
+
+
+/* pseudo things ----------------- */
+.clearfloat::after{
+  clear: both;
+  display: block;
+}
+
+/* convert display types ------ */
+small{
+  display: block;
+  font-size: 0.7em;
+}
+.icon-container{
+  display: block;
+  float: left;
+  margin: 0 2px 0 2px;
+
+}
