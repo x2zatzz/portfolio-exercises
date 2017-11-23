@@ -19,7 +19,6 @@
 *{
   font-family: "Helvetica", sans-serif;
 }
-
 h1,
 h2,
 h3{
@@ -31,31 +30,46 @@ ul li{
   display: inline;
   list-style: none;
 }
-/* major containers --------------- */
+/* major containers dimension --------------- */
 .container{
   width: 90%;
   margin: 0 auto;
 }
-
 header{
   width: 90%;
 }
 main{
   width: 90%;
 }
-
-
-
 footer{
   width: 90%;
   height: 100px;
   margin: 0 1fr 0 1fr;
   padding: 0 1fr 0 1fr;
 }
+/* headers --------------- */
+h1,
+h2,
+h3{
+  width: 100%;
+}
+
 /* home, banner, you name it! */
 .container > img{
   width: 90%;
 }
+
+
+/* main contents ---------------- */
+
+/* main contents > HTML/CSS ---------------- */
+.htmlcss div{
+  border: 1px solid hsla(1, 1%, 0%, 0.25);
+  display: inline;
+  content: "MMMMMMMMMMMMMMM";
+}
+/* THIS PORTION SHOULD BE A GRID ON PARAGRAPH  */
+
 
 
 /* footer ---------------- */
@@ -82,12 +96,6 @@ footer object{
 }
 
 
-/* pseudo things ----------------- */
-.clearfloat::after{
-  clear: both;
-  display: block;
-}
-
 /* convert display types ------ */
 small{
   display: block;
@@ -97,5 +105,13 @@ small{
   display: block;
   float: left;
   margin: 0 2px 0 2px;
+}
+
+/* pseudo things ----------------- */
+.clearfloat::after{
+  content: "";
+  width: 100%;
+  clear: both;
+  display: block;
 
 }
