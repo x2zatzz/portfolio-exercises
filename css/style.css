@@ -1,117 +1,227 @@
-
-/* reset */
+/* UNIVERSAL DEBUG ------------------ */
+/* This portion is used for experimental purposes and this portion must be empty when deployed */ /*
 *{
-  color: hsl(0, 1%, 0%);
+
+}
+*/
+
+/* FONT-FACE */
+@font-face{
+
+}
+
+/* UNIVERSAL DEFAULTS */
+/* the purpose of separating universal selector is to make a distinction to CSS rules that is permanently applied */
+*{
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  border-top: 0.5px solid hsla(1, 1%, 0%, 0.25);
-  border-bottom: 0.5px solid hsla(1, 1%, 0%, 0.25);  
-}
+  /* border: 0.5px solid red; */
+  color: white;
+  font-family: Helvetica, sans-serif;
 
-/* FONTS ----------------------- */
-@font-face {
-  font-family: 'Black Ops One';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Black Ops One Regular'), local('BlackOpsOne-Regular'), url(https://fonts.gstatic.com/s/blackopsone/v9/2XW-DmDsGbDLE372KrMW1TxObtw73-qQgbr7Be51v5c.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
 }
-*{
-  font-family: "Helvetica", sans-serif;
-}
-h1,
-h2,
-h3{
-  font-family: "Black Ops One";
-  font-variant: small-caps;
-}
-
-ul li{
-  display: inline;
+ul{
   list-style: none;
 }
-/* major containers dimension --------------- */
-.container{
-  width: 90%;
+
+/* CONTAINERS */
+/* these contains rules related to dimensions & positioning only
+    note that elements must have Layer class designation and must be explicitly defined in HTML
+    L1 for layer-1, L2 for layer-2, L3 elements can be selected using ":last-child" selector */
+/* LAYER-1 > MAJOR CONTAINERS (metric properties) */
+  /* these containers are direct parents of minor containers
+      should not contain inline elements used as text-holder as much as possible
+      these elements must have additional class assign
+      MAJOR CONTAINERS MUST BE BLOCK-TYPE */
+body{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+
+  width: 100%;
+  height: auto;
+  padding: 0;
+  border-width: 0;
   margin: 0 auto;
 }
-header{
+.body{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+
+  order: 0;
+  flex: 0 1 auto;
+  align-self: auto;
+
   width: 90%;
+  height: auto;
+}
+header.L1{
+  display: column;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+
+  order: 0;
+  flex: 0 1 auto;
+  align-self: auto;
+
+  width: 100%;
+  height: auto;
+  padding: 20px;
+}
+
+main.L1{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: flex-start;
+
+  order: 0;
+  flex: 0 1 auto;
+  align-self: auto;
+
+  width: 100%;
+  height: auto;
+  padding: 20px;
+}
+
+footer.L1{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: space-between;
+
+  order: 0;
+  flex: 0 1 auto;
+  align-self: auto;
+
+  width: 100%;
+  height: auto;
+  padding: 20px;
+}
+
+
+/* LAYER-2 > MINOR CONTAINERS (metric properties) */
+  /* these can contain elements for the purpose of containing END-containers,
+      each container must be attached according to their parent containers
+      it is possible to contain another create branched containers for layer-3 containers
+      rules can contain Dimensions & Positioning only */
+
+main.main-lft{
+
+}
+
+/* <footer> section -------------------- */
+footer.footer-lft-upper,
+footer.footer-lft-lower,
+footer.footer-rgt-upper,
+footer.footer-rgt-lower{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+
+  order: 0;
+  flex: 0 1 auto;
+  align-self: auto;
+
+  padding: 5px;
+
+}
+footer > .footer-icons{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+
+  order: 0;
+  flex: 0 1 auto;
+  align-self: auto;
+
+}
+
+
+      /* LAYER-3 > EDGE-elements (ANY rules except color) */
+  /* literally, the end-containers, in which the element is at the end of the family branch (at the edge)
+      usually it contains elements holding data or information to be displayed and rendered for viewers
+      any rules can be applied on these containers, also items must be constructed according to the flow of HTML
+      since L3 elements are the farthest elements, they could be selected uniquely without a class-name
+      class-naming is only applied when necessary, specially for div elements with special purpose other
+      than containing child elements*/
+
+.footer-icons img,
+.footer-icons object{
+  width: auto;
+  height: 32px;
+  margin: 2px;
+
+}
+
+
+
+
+
+
+
+/* COLOR & BACK-IMAGE */
+  /* To make coloring less hassle, determine the elements with same color values,
+      assign those elements to a particular color-group,
+      must be coded from parent to the child elements/containers */
+
+body{
+  background: hsla(0, 0%, 0%, 1.0);
+}
+
+.body,
+header,
+main,
+footer{
+  background: hsl(0, 0%, 15%);
+}
+header{
+  background: hsla(0, 0%, 5%, 0.1);
 }
 main{
-  width: 90%;
+  background: hsla(0, 0%, 5%, 0.25);
 }
 footer{
-  width: 90%;
-  height: 100px;
-  margin: 0 1fr 0 1fr;
-  padding: 0 1fr 0 1fr;
+  background: hsla(0, 0%, 5%, 0.5);
 }
-/* headers --------------- */
-h1,
-h2,
-h3{
-  width: 100%;
-}
-
-/* home, banner, you name it! */
-.container > img{
-  width: 90%;
-}
-
-
-/* main contents ---------------- */
-
-/* main contents > HTML/CSS ---------------- */
-.htmlcss div{
-  border: 1px solid hsla(1, 1%, 0%, 0.25);
-  display: inline;
-  content: "MMMMMMMMMMMMMMM";
-}
-/* THIS PORTION SHOULD BE A GRID ON PARAGRAPH  */
-
-
-
-/* footer ---------------- */
-.footerleft{
-  float: left;
-}
-.footerright{
-  float: right;
-}
-footer img{
-  height: 30px;
-}
-footer object{
-  height: 30px;
-}
-
-/* social plugins */
 .socialplugins{
-  position: fixed;
-  left: 0;
-  top: 0;
+  display: block;
   width: 100%;
-  display: block;
+  text-align: center;
+  background: black;
+}
+
+main.L2 li{
+  text-indent: 1em;
+  line-height: 1.5em;
+}
+/* HOVER-effects */
+.footer-icons a:hover{
+  filter:
+  saturate(80%)
+  contrast(50%);
+
 }
 
 
-/* convert display types ------ */
-small{
-  display: block;
-  font-size: 0.7em;
-}
-.icon-container{
-  display: block;
-  float: left;
-  margin: 0 2px 0 2px;
-}
 
-/* pseudo things ----------------- */
-.clearfloat::after{
-  content: "";
-  width: 100%;
-  clear: both;
-  display: block;
-
-}
+/* CSS3 Template version 1.1 - 20171125 +++++++++++++++++++++++++++++++++++++ */
+/*  Developer: Michael James Turiano Albatana                                 */
+/*  Email: mjtalbatana@gmail.com                                              */
+/*  Github: https://github.com/mjtalbatana                                    */
+/*  LinkedIn: https://www.linkedin.com/in/mjtalbatana                         */
+/* END OF CSS FILE ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
