@@ -116,9 +116,9 @@ footer.L1{
       it is possible to contain another create branched containers for layer-3 containers
       rules can contain Dimensions & Positioning only */
 
-main.main-lft{
+/* main.main-lft{
 
-}
+} */
 
 /* <footer> section -------------------- */
 footer.footer-lft-upper,
@@ -198,11 +198,12 @@ main{
 footer{
   background: hsla(0, 0%, 5%, 0.5);
 }
-.socialplugins{
+.specialthanks{
   display: block;
   width: 100%;
   text-align: center;
   background: black;
+  font-weight: bolder;
 }
 
 main.L2 li{
