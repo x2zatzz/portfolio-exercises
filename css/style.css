@@ -47,6 +47,12 @@ body{
   border-width: 0;
   margin: 0 auto;
 }
+.body,
+header.L1,
+main.L1,
+footer.L1{
+  padding: 20px;
+}
 .body{
   display: flex;
   flex-flow: column nowrap;
@@ -62,7 +68,7 @@ body{
   height: auto;
 }
 header.L1{
-  display: column;
+  display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
@@ -74,7 +80,6 @@ header.L1{
 
   width: 100%;
   height: auto;
-  padding: 20px;
 }
 
 main.L1{
@@ -90,7 +95,6 @@ main.L1{
 
   width: 100%;
   height: auto;
-  padding: 20px;
 }
 
 footer.L1{
@@ -106,7 +110,6 @@ footer.L1{
 
   width: 100%;
   height: auto;
-  padding: 20px;
 }
 
 
@@ -136,7 +139,6 @@ footer.footer-rgt-lower{
   align-self: auto;
 
   padding: 5px;
-
 }
 footer > .footer-icons{
   display: flex;
@@ -182,7 +184,6 @@ footer > .footer-icons{
 body{
   background: hsla(0, 0%, 0%, 1.0);
 }
-
 .body,
 header,
 main,
