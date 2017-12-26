@@ -1,0 +1,146 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+/*
+DOM structure ===============================
+body
+  #wrap
+    #nav
+      h2
+      ul
+        li
+          a
+  #content
+    h1
+    p
+    ul
+      li
+    .copyright
+      a
+*/
+
+
+//COLOR SCHEME ========================================
+body{
+  background: rgb(55, 55, 97);
+  #wrap{
+    #nav{
+      background: lightblue;
+      &::after{
+        background: rgb(55, 55, 97);
+      }
+    }
+    #content{
+      background: cornflowerblue;
+
+      .copyright{
+        background: rgb(55, 55, 97);
+      }
+    }
+  }
+}
+
+//CONTAINER DIMENSION =================================
+body{
+  width: 100vw;
+  height: auto;
+
+  #wrap{
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+    display: grid;
+    grid-template-areas: "navA content";
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr;
+
+    #nav{
+      grid-area: navA;
+      display: flex;
+      flex-flow: column nowrap;
+      position: relative;
+      align-content: center;
+      align-items: center;
+
+      &::after{
+        display: block;
+        width: 100%;
+        height: 2em;
+        content: "";
+        position: absolute;
+        bottom: 0;
+
+      }
+
+      h2{
+        margin: 10px 0;
+      }
+      ul{
+        li{
+          width: fit-content;
+        }
+      }
+    }
+
+    #content{
+      grid-area: content;
+      display: flex;
+      flex-flow: column nowrap;
+
+      h1,
+      p,
+      ul{
+        margin: 10px 10px;
+      }
+      .copyright{
+        display: block;
+        width: auto;
+        height: 2em;
+        margin: 0;
+      }
+    }
+  }
+}
+
+// FONT, TEXT, ALIGN, POSITION properties
+body{
+  #wrap{
+    #nav{
+      text-align: center;
+      h2{
+        font-size: 1.25em;
+      }
+      ul{
+        li{
+          a{
+          }
+        }
+      }
+    }
+    #content{
+      h1{
+        font-size: 2em;
+      }
+      p{}
+      ul{
+        li{}
+
+      }
+      h1,
+      p,
+      ul{
+        text-align: center;
+      }
+      .copyright{
+        font-size: 12px;
+        line-height: 2em;
+        a{
+        }
+      }
+    }
+  }
+}
