@@ -1,0 +1,32 @@
+*{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: black;
+  box-sizing: border-box;
+}
+
+body{
+  background: cornflowerblue;
+  height: auto;
+}
+
+li{
+  width: fit-content;
+}
+
+ul{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  justify-items: center;
+  align-content: center;
+  align-items: center;
+}
+
+.copyright{
+  font-style: italic;
+  font-size: 0.8em;
+}
+
+a{
+  color: purple;
+}
