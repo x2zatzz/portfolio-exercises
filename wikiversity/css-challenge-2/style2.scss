@@ -1,0 +1,65 @@
+@mixin border($top, $right, $bottom, $left){
+  border-top: $top dotted black;
+  border-right: $right dotted black;
+  border-bottom: $bottom dotted black;
+  border-left: $left dotted black;
+}
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background: lightcoral;
+  width: 100vw;
+  height: auto;
+  h1,
+  p,
+  ul,
+  .copyright{
+    background: white;
+  }
+
+  #wrap{
+    width: 50%;
+    height: auto;
+    margin: 0 auto;
+    @include border(4px, 4px, 4px, 4px);
+  }
+  h1{
+    padding: 5px;
+    @include border(0, 0, 4px, 0);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 2.5em;
+    font-style: italic;
+    text-align: center;
+  }
+  p,ul{
+    padding: 5px 20px;
+  }
+  p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.8em;
+    text-align: justify;
+  }
+  ul{
+    li{
+      list-style: none;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-style: italic;
+      text-align: center;
+      &::first-letter{
+        font-size: 1.5em;
+      }
+    }
+  }
+  .copyright{
+    font-size: 0.7em;
+    text-align: center;
+    a{
+      text-decoration-line: none;
+    }
+  }
+}
