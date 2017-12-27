@@ -1,0 +1,101 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  background: burlywood;
+  width: 100vw;
+  height: auto;
+  margin-top: 20px;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+body #header {
+  background: white;
+  padding-top: 40px;
+  display: grid;
+  grid-template-areas: "logo quote";
+  grid-template-columns: 1fr 2fr;
+  grid-auto-rows: 1fr;
+}
+
+body #header blockquote {
+  grid-area: quote;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+body #header blockquote p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2em;
+  font-style: italic;
+}
+
+body #header #logo {
+  grid-area: logo;
+}
+
+body #header #logo h1 {
+  display: none;
+}
+
+body #header #logo img {
+  height: 100%;
+  margin: 10px 20px;
+}
+
+body #content {
+  background: white;
+  display: grid;
+  grid-template-areas: "side main";
+  grid-template-columns: 1fr 2fr;
+  grid-auto-rows: 1fr;
+}
+
+body #content #content-side {
+  grid-area: side;
+}
+
+body #content #content-side dl {
+  margin-left: 20px;
+}
+
+body #content #content-side dl dt {
+  margin-top: 5px;
+}
+
+body #content #content-side dl dt a {
+  color: gray;
+  font-size: 1.3em;
+  text-decoration-line: none;
+}
+
+body #content #content-side dl dd {
+  margin-left: 10px;
+}
+
+body #content #content-main {
+  grid-area: main;
+  padding-left: 20px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+
+body #content #content-main p {
+  margin: 5px 0;
+}
+
+body #content #content-main p a {
+  text-decoration-line: none;
+  color: gray;
+}
+/*# sourceMappingURL=style.css.map */

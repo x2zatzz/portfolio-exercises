@@ -1,0 +1,93 @@
+
+
+// DEFAULTS ==============================================
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+li{
+  list-style: none;
+}
+
+// MAIN CSS ===========================================
+body{
+  background: burlywood;
+  width: 100vw;
+  height: auto;
+  margin-top: 20px;
+  display: flex;
+  flex-flow: column nowrap;
+
+  #header{
+    background: white;
+    padding-top: 40px;
+    display: grid;
+    grid-template-areas: "logo quote";
+    grid-template-columns: 1fr 2fr;
+    grid-auto-rows: 1fr;
+    blockquote{
+      grid-area: quote;
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      p{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 2em;
+        font-style: italic;
+      }
+    }
+    #logo{
+      grid-area: logo;
+      h1{
+        display: none;
+      }
+      img{
+        height: 100%;
+        margin: 10px 20px;
+      }
+    }
+  }
+
+  #content{
+    background: white;
+    display: grid;
+    grid-template-areas: "side main";
+    grid-template-columns: 1fr 2fr;
+    grid-auto-rows: 1fr;
+    #content-side{
+      grid-area: side;
+      dl{
+        margin-left: 20px;
+        dt{
+          margin-top: 5px;
+          a{
+            color: gray;
+            font-size: 1.3em;
+            text-decoration-line: none;
+          }
+        }
+        dd{
+          margin-left: 10px;
+        }
+      }
+    }
+    #content-main{
+      grid-area: main;
+      padding-left: 20px;
+      margin-bottom: 20px;
+      margin-right: 20px;
+      h2{
+      }
+      p{
+        margin: 5px 0;
+        a{
+          text-decoration-line: none;
+          color: gray;
+        }
+      }
+    }
+  }
+}
