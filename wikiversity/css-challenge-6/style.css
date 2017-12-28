@@ -2,6 +2,44 @@
 color scheme: gothic
 color composition: black white gray
 font composition: garamond, times new roman, gothic
-
 */
+* {
+  box-sizing: content-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: url("silhouette-981802_960_720.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+body #wrap {
+  margin-left: 20px;
+  width: auto;
+  height: auto;
+}
+
+body #wrap .thepost h1 {
+  color: darkgrey;
+}
+
+body #wrap .thepost h2 {
+  color: darkgray;
+}
+
+body #wrap .thepost p {
+  color: gray;
+}
+
+body #wrap .thepost .postfooter {
+  color: white;
+}
 /*# sourceMappingURL=style.css.map */
